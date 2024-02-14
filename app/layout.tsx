@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import './globals.css'
+import { ThemeProvider } from '@/components/shared/theme-provider'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -11,8 +12,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Evently',
-  description: 'Evently is a platform for event management.',
+  title: 'happen',
+  description: 'Your Hub for Exciting Events!',
   icons: {
     icon: '/assets/images/logo.svg'
   }
@@ -26,8 +27,14 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
+      <ThemeProvider attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <body className={poppins.variable}>{children}</body>
+        </ThemeProvider>
       </html>
     </ClerkProvider>
   )

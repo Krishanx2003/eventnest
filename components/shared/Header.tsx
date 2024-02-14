@@ -4,6 +4,10 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import NavItems from "./NavItems"
 import MobileNav from "./MobileNav"
+import { ModeToggle } from "./toggle"
+
+
+
 
 const Header = () => {
   return (
@@ -15,12 +19,14 @@ const Header = () => {
             alt="Evently logo" 
           />
         </Link>
+       
 
         <SignedIn>
           <nav className="md:flex-between hidden w-full max-w-xs">
             <NavItems />
           </nav>
         </SignedIn>
+        <ModeToggle />
 
         <div className="flex w-32 justify-end gap-3">
           <SignedIn>
@@ -34,6 +40,7 @@ const Header = () => {
               </Link>
             </Button>
           </SignedOut>
+          
         </div>
       </div>
     </header>

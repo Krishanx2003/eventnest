@@ -9,6 +9,16 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+
+
+
+export enum Theme {
+  DARK = "dark",
+  LIGHT = "light",
+  SYSTEM = "system",
+}
+
+
 export const formatDateTime = (dateString: Date) => {
   const dateTimeOptions: Intl.DateTimeFormatOptions = {
     weekday: 'short', // abbreviated weekday name (e.g., 'Mon')
